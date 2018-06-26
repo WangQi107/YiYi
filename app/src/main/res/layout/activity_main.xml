@@ -27,7 +27,7 @@
             android:id="@+id/main_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="@string/title_twoT"
             android:textColor="@color/white"
             android:textSize="22sp" />
     </android.support.v7.widget.Toolbar>
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:drawableTop="@drawable/rb_translate_img"
-            android:text="" />
+            android:text="@string/bottom_one" />
 
         <RadioButton
             android:id="@+id/rb_dict"

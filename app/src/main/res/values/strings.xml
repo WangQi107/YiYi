@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">YiYi</string>
-    <string name="title_one">易译</string>
+    <string name="app_name">易译</string>
+    <string name="title_one">易译&#160;</string>
     <string name="title_twoT">Translate</string>
     <string name="bottom_one">翻译</string>
     <string name="bottom_two">字词典</string>
     <string name="bottom_three">我的</string>
+    <string name="neterror">网络未连接，功能可能无法正常使用！</string>
 </resources>

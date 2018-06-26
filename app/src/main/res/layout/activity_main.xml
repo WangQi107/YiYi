@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:text="易译 "
+            android:text="@string/title_one"
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold" />
@@ -27,9 +27,9 @@
             android:id="@+id/main_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Translate"
+            android:text=""
             android:textColor="@color/white"
-            android:textSize="23sp" />
+            android:textSize="22sp" />
     </android.support.v7.widget.Toolbar>
 
     <FrameLayout
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:drawableTop="@drawable/rb_translate_img"
-            android:text="翻译" />
+            android:text="" />
 
         <RadioButton
             android:id="@+id/rb_dict"

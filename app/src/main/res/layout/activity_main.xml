@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:text="@string/title_one"
             android:textColor="@color/white"
             android:textSize="23sp"
@@ -37,14 +37,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/view"
-        android:layout_below="@+id/main_toolbar"></FrameLayout>
+        android:layout_below="@+id/main_toolbar"/>
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="0.8dp"
         android:layout_above="@+id/radiogroup"
-        android:background="@color/main_view"></View>
+        android:background="@color/main_view"/>
 
     <RadioGroup
         android:id="@+id/radiogroup"
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/rb_dict_img"
-            android:text="字词典" />
+            android:text="@string/bottom_two" />
 
         <RadioButton
             android:id="@+id/rb_my"
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/rb_my_img"
-            android:text="我的" />
+            android:text="@string/bottom_three" />
     </RadioGroup>
 
 </RelativeLayout>

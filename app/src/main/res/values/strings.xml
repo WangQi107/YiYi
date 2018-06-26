@@ -3,4 +3,6 @@
     <string name="title_one">易译</string>
     <string name="title_twoT">Translate</string>
     <string name="bottom_one">翻译</string>
+    <string name="bottom_two">字词典</string>
+    <string name="bottom_three">我的</string>
 </resources>

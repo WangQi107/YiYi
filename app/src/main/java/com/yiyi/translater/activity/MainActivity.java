@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo == null || !networkInfo.isAvailable()) {
             Toast.makeText(MainActivity.this,getString(R.string.neterror),Toast.LENGTH_LONG).show();
-            //jjjj
         } else {
             flag=true;
         }

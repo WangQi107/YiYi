@@ -56,7 +56,7 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
 
     private String url = "http://api.fanyi.baidu.com/api/trans/vip/translate";//请求的网址
     private String q = "";//需要翻译的文字
-    private String f = "zh";//翻译源语言
+    private String f = "auto";//翻译源语言
     private String t = "en";//译文语言
     private String aid = "20180516000160623";//APP ID
     private String salt = "1435660288";//随机数
@@ -129,6 +129,7 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_translate, container, false);
         initViews();
+        checknet();
         setListeners();
         return v;
     }
@@ -154,18 +155,12 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.im_ok:
-                ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(CONNECTIVITY_SERVICE);
-                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-                if (networkInfo == null || !networkInfo.isAvailable()) {
-                    Toast.makeText(getActivity(), getString(R.string.neterror), Toast.LENGTH_LONG).show();
+                checknet();
+                if (net == true) {
+                    q = ett.getText().toString();
+                    translate();
                 } else {
-                    net = true;
-                    if (net == true) {
-                        q = ett.getText().toString();
-                        translate();
-                    } else {
-                        Toast.makeText(getActivity(), "网络错误！", Toast.LENGTH_LONG).show();
-                    }
+                    Toast.makeText(getActivity(), "网络错误！", Toast.LENGTH_LONG).show();
                 }
                 break;
             case R.id.im_clean:
@@ -198,6 +193,16 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
                 Toast.makeText(getActivity(), "错误!", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void checknet() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo == null || !networkInfo.isAvailable()) {
+            Toast.makeText(getActivity(), getString(R.string.neterror), Toast.LENGTH_SHORT).show();
+        } else {
+            net=true;
+        }
     }
 
     public static String md5(String string) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <com.yiyi.translater.customerview.XCRoundImageView
@@ -38,12 +38,17 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="30dp"
         android:text="开发时间：2018-06-20" />
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
-        android:id="@+id/tv_advice"
+        android:id="@+id/email_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="留下你的建议吧.." />
-
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="留下你的建议吧..."
+        android:textColor="#5069EE"
+        android:textSize="15sp" />
+</RelativeLayout>
 </LinearLayout>

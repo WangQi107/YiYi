@@ -1,16 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Fragment_Dict">
+    tools:context=".fragment.Fragment_Dict"
+    android:orientation="horizontal">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dict待开发"
-        android:textSize="25sp"
-        android:layout_centerInParent="true"/>
+    <LinearLayout
+        android:id="@+id/layout_left"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <ImageButton
+            android:id="@+id/ib_dictionary"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/dictionary" />
+
+        <Button
+            android:id="@+id/btn_dictionary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="新华字典"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_left_introduce"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="    《新华字典》是新中国成立后出版的第一部以白话释义、用白话举例的字典，也是迄今最有影响、最权威的一部小型汉语字典，堪称小型汉语语文辞书的典范。"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:id="@+id/layout_right">
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:id="@+id/ib_idiom"
+            android:src="@mipmap/idiom"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="成语词典"
+            android:textSize="16sp"
+            android:id="@+id/btn_idiom"
+            android:layout_marginTop="20dp" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="    《成语词典》全面收录了近15000条成语，其中以现代常用成语为主体，酌量收录了日常生活中的熟语与惯用语，具备多位一体的特色。是学习汉语成语的首选工具书。"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tv_right_introduce"/>
+
+    </LinearLayout>
+
+</LinearLayout>

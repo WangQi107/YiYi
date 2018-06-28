@@ -4,17 +4,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ImageView
+    <com.yiyi.translater.customerview.XCRoundImageView
         android:id="@+id/iv_header"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:src="@mipmap/my_click" />
+        android:src="@mipmap/ic_header_boy" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <TextView
@@ -190,7 +191,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
@@ -204,8 +205,11 @@
         <TextView
             android:id="@+id/info_email"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="113dp"
+            android:gravity="center_vertical"
             android:text="superhmi@163.com"
             android:textSize="18sp" />
 

@@ -34,11 +34,13 @@
             android:background="@drawable/rounded_edittext" />
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
             android:src="@mipmap/search"
-            android:layout_alignBottom="@id/et_idiom_search"
-            android:layout_alignRight="@id/et_idiom_search"
-            android:layout_alignTop="@id/et_idiom_search"/>
+            android:layout_alignTop="@id/et_idiom_search"
+            android:layout_marginEnd="50dp"
+            android:id="@+id/iv_idiom_search"
+            />
 
 
     </RelativeLayout>
@@ -57,7 +59,7 @@
             android:layout_height="match_parent"></ListView>
 
         <TextView
-            android:id="@+id/te_clean"
+            android:id="@+id/tv_idiom_explain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

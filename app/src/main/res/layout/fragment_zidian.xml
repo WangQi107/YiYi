@@ -7,10 +7,10 @@
     tools:context=".fragment.Fragment_ZiDian">
 
     <RelativeLayout
+        android:id="@+id/re_zidian_search"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/colorAccent"
-        android:id="@+id/re_zidian_search">
+        android:background="@color/colorAccent">
 
         <TextView
             android:id="@+id/tv_zd"
@@ -32,13 +32,14 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="55dp"
             android:background="@drawable/rounded_edittext" />
+
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/search"
-            android:layout_alignBottom="@id/et_zd_search"
-            android:layout_alignRight="@id/et_zd_search"
-            android:layout_alignTop="@id/et_zd_search"/>
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/et_zd_search"
+            android:layout_marginEnd="50dp"
+            android:src="@mipmap/search" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -50,10 +51,11 @@
         <ListView
             android:id="@+id/lv_idiom"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
-
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"></ListView>
         <TextView
-            android:id="@+id/te_clean"
+            android:id="@+id/tv_zd_explain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

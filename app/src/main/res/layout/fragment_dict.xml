@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/ib_dictionary"
+            android:id="@+id/ib_dict"
             android:layout_width="150dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
@@ -23,7 +23,7 @@
             android:src="@mipmap/dictionary" />
 
         <Button
-            android:id="@+id/btn_dictionary"
+            android:id="@+id/btn_dict"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
+
     <ImageView
         android:id="@+id/iv_header"
         android:layout_width="120dp"
@@ -25,6 +25,7 @@
             android:gravity="center_vertical"
             android:text="用户名:"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/info_stuno"
             android:layout_width="wrap_content"
@@ -36,10 +37,12 @@
             android:text="王韬韬"
             android:textSize="18sp" />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/main_view" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,6 +56,7 @@
             android:gravity="center_vertical"
             android:text="性别:"
             android:textSize="18sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
@@ -63,10 +67,12 @@
             android:text="男"
             android:textSize="18sp" />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/main_view" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,6 +86,7 @@
             android:gravity="center_vertical"
             android:text="年龄:"
             android:textSize="18sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
@@ -90,10 +97,12 @@
             android:text="19"
             android:textSize="18sp" />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/main_view" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,6 +116,7 @@
             android:gravity="center_vertical"
             android:text="密码:"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/info_pass"
             android:layout_width="wrap_content"
@@ -117,6 +127,7 @@
             android:gravity="center_vertical"
             android:text="12345678"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/pass_update"
             android:layout_width="wrap_content"
@@ -128,10 +139,12 @@
             android:textColor="#5069EE"
             android:textSize="15sp" />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/main_view" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -145,6 +158,7 @@
             android:gravity="center_vertical"
             android:text="号码:"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/info_phone"
             android:layout_width="wrap_content"
@@ -155,6 +169,7 @@
             android:gravity="center_vertical"
             android:text="15526449692"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/phone_update"
             android:layout_width="wrap_content"
@@ -166,14 +181,16 @@
             android:textColor="#5069EE"
             android:textSize="15sp" />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/main_view" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="@color/white">
 
         <TextView
             android:layout_width="match_parent"
@@ -183,16 +200,15 @@
             android:gravity="center_vertical"
             android:text="邮箱:"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/info_email"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="113dp"
-            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="superhmi@163.com"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/email_update"
             android:layout_width="wrap_content"
@@ -204,6 +220,7 @@
             android:textColor="#5069EE"
             android:textSize="15sp" />
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

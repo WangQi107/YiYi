@@ -84,10 +84,12 @@
         android:id="@+id/re_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/view">
+        android:layout_below="@+id/view"
+        android:background="@color/white">
 
         <EditText
             android:id="@+id/ed"
+            android:layout_marginRight="30dp"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@color/white"

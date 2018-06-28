@@ -6,4 +6,7 @@
     <string name="bottom_two">字词典</string>
     <string name="bottom_three">我的</string>
     <string name="neterror">网络未连接，功能可能无法正常使用！</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

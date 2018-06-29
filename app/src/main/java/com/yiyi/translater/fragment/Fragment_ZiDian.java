@@ -16,11 +16,12 @@ import com.yiyi.translater.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_ZiDian extends Fragment {
-    private TextView tvZd,tvZdExplain;
+public class Fragment_ZiDian extends Fragment implements View.OnClickListener{
+    private View v;
+    private TextView tvZd,tvZdExpl;
     private EditText etZdSearch;
     private ImageView ivZdSearch;
-    private ListView lvZd;
+
 
     public Fragment_ZiDian() {
         // Required empty public constructor
@@ -31,7 +32,26 @@ public class Fragment_ZiDian extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_zidian, container, false);
+        v= inflater.inflate(R.layout.fragment_zidian, container, false);
+        initViews();
+        setListeners();
+        return v;
     }
 
+    private void setListeners() {
+        etZdSearch.setOnClickListener(this);
+        ivZdSearch.setOnClickListener(this);
+    }
+
+    private void initViews() {
+        tvZd=v.findViewById(R.id.tv_zd);
+        tvZdExpl=v.findViewById(R.id.tv_zd_explain);
+        etZdSearch=v.findViewById(R.id.et_zd_search);
+        ivZdSearch=v.findViewById(R.id.iv_zd_search);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
 }

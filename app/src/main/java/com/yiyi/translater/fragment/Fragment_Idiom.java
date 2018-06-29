@@ -16,11 +16,11 @@ import com.yiyi.translater.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_Idiom extends Fragment {
-    private TextView tvIniom,tvIniomExplain;
+public class Fragment_Idiom extends Fragment implements View.OnClickListener{
+    private View v;
+    private TextView tvIniom,tvIniomExpl;
     private EditText etIniomSearch;
     private ImageView ivIniomSearch;
-    private ListView lvIniom;
 
     public Fragment_Idiom() {
         // Required empty public constructor
@@ -31,7 +31,26 @@ public class Fragment_Idiom extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_idiom, container, false);
+       v= inflater.inflate(R.layout.fragment_idiom, container, false);
+       initViews();
+       setListeners();
+       return v;
     }
 
+    private void setListeners() {
+        etIniomSearch.setOnClickListener(this);
+        ivIniomSearch.setOnClickListener(this);
+    }
+
+    private void initViews() {
+        tvIniom=v.findViewById(R.id.tv_idiom);
+        tvIniomExpl=v.findViewById(R.id.tv_idiom_explain);
+        etIniomSearch=v.findViewById(R.id.et_idiom_search);
+        ivIniomSearch=v.findViewById(R.id.iv_idiom_search);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
 }

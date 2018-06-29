@@ -57,7 +57,7 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
     private String url = "http://api.fanyi.baidu.com/api/trans/vip/translate";//请求的网址
     private String q = "";//需要翻译的文字
     private String f = "auto";//翻译源语言
-    private String t = "en";//译文语言
+    private String t = "zh";//译文语言
     private String aid = "20180516000160623";//APP ID
     private String salt = "1435660288";//随机数
     private String secretkey = "U_aL8_6aRQSRgOmQYmQA";//密钥
@@ -130,6 +130,9 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
         v = inflater.inflate(R.layout.fragment_translate, container, false);
         initViews();
         checknet();
+        if (net == false) {
+            Toast.makeText(getActivity(), getString(R.string.neterror), Toast.LENGTH_SHORT).show();
+        }
         setListeners();
         return v;
     }
@@ -199,9 +202,9 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
         ConnectivityManager connectivityManager = (ConnectivityManager) getActivity().getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo == null || !networkInfo.isAvailable()) {
-            Toast.makeText(getActivity(), getString(R.string.neterror), Toast.LENGTH_SHORT).show();
+            net = false;
         } else {
-            net=true;
+            net = true;
         }
     }
 

@@ -88,16 +88,17 @@
         android:background="@color/white">
 
         <EditText
-            android:id="@+id/ed"
-            android:layout_marginRight="30dp"
+            android:id="@+id/et_t"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginRight="30dp"
             android:background="@color/white"
             android:gravity="top"
             android:hint="在此输入要翻译的文本"
             android:maxLength="400" />
 
         <ImageView
+            android:id="@+id/im_clean"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentEnd="true"
@@ -106,9 +107,10 @@
             android:src="@mipmap/clear_btn_press" />
 
         <ImageView
+            android:id="@+id/im_ok"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignBottom="@+id/ed"
+            android:layout_alignBottom="@+id/et_t"
             android:layout_alignParentEnd="true"
             android:src="@mipmap/ok" />
     </RelativeLayout>
@@ -120,7 +122,7 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/te_clean"
+            android:id="@+id/tv_clean"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -131,7 +133,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/te_clean">
+            android:layout_below="@+id/tv_clean">
 
         </ListView>
     </RelativeLayout>

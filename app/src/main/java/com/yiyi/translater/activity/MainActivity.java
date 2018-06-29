@@ -18,7 +18,6 @@ import com.yiyi.translater.fragment.Fragment_My;
 import com.yiyi.translater.fragment.Fragment_Translate;
 
 public class MainActivity extends AppCompatActivity {
-    Boolean flag=false;
     private RadioGroup radioGroup;
     private RadioButton rbtranslate;
     private RadioButton rbdict;
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initViews();
         setViews();
-        checkNet();
         setListeners();
     }
 
@@ -88,16 +86,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void checkNet() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        if (networkInfo == null || !networkInfo.isAvailable()) {
-            Toast.makeText(MainActivity.this,getString(R.string.neterror),Toast.LENGTH_LONG).show();
-        } else {
-            flag=true;
-        }
     }
 
     @Override

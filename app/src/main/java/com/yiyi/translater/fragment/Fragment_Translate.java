@@ -50,6 +50,7 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
     private ImageView iclean;
     private ImageView iok;
     private TextView tvclean;
+    private TextView tvres;
     private JSONObject js;
     private String result = "";
     private boolean net = false;
@@ -76,7 +77,8 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
                     for (int i = 0; i < value.length(); i++) {
                         child = value.getJSONObject(i);
                         result = child.getString("dst");
-                        tvclean.setText(result);
+                        tvres.setText(result);
+                        tvres.setVisibility(View.VISIBLE);
                     }
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
@@ -144,6 +146,7 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
         iclean = v.findViewById(R.id.im_clean);
         iok = v.findViewById(R.id.im_ok);
         tvclean = v.findViewById(R.id.tv_clean);
+        tvres=v.findViewById(R.id.tv_res);
     }
 
     private void setListeners() {

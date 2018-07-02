@@ -29,7 +29,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="新华字典"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_shape"/>
 
         <TextView
             android:id="@+id/tv_left_introduce"
@@ -55,7 +57,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:id="@+id/ib_idiom"
-            android:src="@mipmap/idiom"/>
+            android:src="@mipmap/idiom"
+            android:background="@drawable/btn_shape"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,7 +66,9 @@
             android:text="成语词典"
             android:textSize="16sp"
             android:id="@+id/btn_idiom"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_shape"/>
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"

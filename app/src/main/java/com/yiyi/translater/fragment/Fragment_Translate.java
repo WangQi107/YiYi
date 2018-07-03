@@ -1,6 +1,7 @@
 package com.yiyi.translater.fragment;
 
 
+import android.app.Dialog;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.yiyi.translater.R;
 import com.yiyi.translater.activity.MainActivity;
+import com.yiyi.translater.dialog.Choose_Dialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,13 +52,14 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
     private ImageView iclean;
     private ImageView iok;
     private TextView tvclean;
+    private TextView tvres;
     private JSONObject js;
     private String result = "";
     private boolean net = false;
 
     private String url = "http://api.fanyi.baidu.com/api/trans/vip/translate";//请求的网址
     private String q = "";//需要翻译的文字
-    private String f = "auto";//翻译源语言
+    private String f = "en";//翻译源语言
     private String t = "zh";//译文语言
     private String aid = "20180516000160623";//APP ID
     private String salt = "1435660288";//随机数
@@ -76,7 +79,8 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
                     for (int i = 0; i < value.length(); i++) {
                         child = value.getJSONObject(i);
                         result = child.getString("dst");
-                        tvclean.setText(result);
+                        tvres.setText(result);
+                        tvres.setVisibility(View.VISIBLE);
                     }
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
@@ -144,6 +148,7 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
         iclean = v.findViewById(R.id.im_clean);
         iok = v.findViewById(R.id.im_ok);
         tvclean = v.findViewById(R.id.tv_clean);
+        tvres=v.findViewById(R.id.tv_res);
     }
 
     private void setListeners() {
@@ -168,7 +173,10 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
                 break;
             case R.id.im_clean:
                 ett.setText("");
-                tvclean.setText("");
+                break;
+            case R.id.tv_clean:
+                Choose_Dialog d=new Choose_Dialog(getContext());
+                d.show();
                 break;
         }
     }

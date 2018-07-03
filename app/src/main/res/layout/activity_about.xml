@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.yiyi.translater.customerview.XCRoundImageView
+    <com.yiyi.translater.views.XCRoundImageView
         android:id="@+id/iv_header"
         android:layout_width="70dp"
         android:layout_height="70dp"

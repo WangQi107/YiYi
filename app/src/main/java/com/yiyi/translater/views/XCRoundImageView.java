@@ -1,4 +1,4 @@
-package com.yiyi.translater.customerview;
+package com.yiyi.translater.views;
 
 
 import android.annotation.SuppressLint;

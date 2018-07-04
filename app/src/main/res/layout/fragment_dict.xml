@@ -57,8 +57,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:id="@+id/ib_idiom"
-            android:src="@mipmap/idiom"
-            android:background="@drawable/btn_shape"/>
+            android:src="@mipmap/idiom" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

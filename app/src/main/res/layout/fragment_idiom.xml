@@ -65,7 +65,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="10dp"
-            android:text="---该词条来源于新华字典" />
+            android:text="---该词条来源于新华成语字典" />
     </RelativeLayout>
 
 </LinearLayout>

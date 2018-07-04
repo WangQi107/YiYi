@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView maintitle;
     private long exitTime = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     @Override

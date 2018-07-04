@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.Fragment_Dict"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:id="@+id/fragment_dict">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -78,5 +79,7 @@
             android:id="@+id/tv_right_introduce"/>
 
     </LinearLayout>
+
+
 
 </LinearLayout>

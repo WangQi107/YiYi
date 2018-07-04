@@ -1,68 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.Fragment_ZiDian">
+    tools:context=".activity.SearchIdiomActivity">
 
     <RelativeLayout
-        android:id="@+id/re_zidian_search"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/colorAccent">
+        android:background="@color/dictionary"
+        android:id="@+id/re_idiom_search">
 
         <TextView
-            android:id="@+id/tv_zd"
+            android:id="@+id/tv_idiom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:text="新华字典"
+            android:text="成语词典"
             android:textColor="@color/white"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/et_zd_search"
+            android:id="@+id/et_idiom_search"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="55dp"
             android:background="@drawable/rounded_edittext" />
-
         <ImageView
-            android:id="@+id/iv_zd_search"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/et_zd_search"
-            android:layout_marginEnd="50dp"
-            android:src="@mipmap/search" />
+            android:src="@mipmap/search"
+            android:layout_alignTop="@id/et_idiom_search"
+            android:layout_marginEnd="40dp"
+            android:id="@+id/iv_idiom_search" />
     </RelativeLayout>
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/re_zidian_search"
+        android:layout_below="@id/re_idiom_search"
         android:layout_marginTop="10dp">
 
         <ListView
             android:id="@+id/lv_idiom"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"></ListView>
-        <TextView
-            android:id="@+id/tv_zd_explain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
-            android:text="---该词条来源于新华词典" />
+            android:layout_height="match_parent"></ListView>
     </RelativeLayout>
-
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.yiyi.translater.fragment;
 
 
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yiyi.translater.R;
+import com.yiyi.translater.activity.SearchDictActivity;
+import com.yiyi.translater.activity.SearchIdiomActivity;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
 
@@ -30,13 +33,11 @@ public class Fragment_Dict extends Fragment implements View.OnClickListener{
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_dict, container, false);
-
         initViews();
         checknet();
         setListeners();
@@ -72,6 +73,16 @@ public class Fragment_Dict extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_dict:
+                Intent i1=new Intent(getActivity(), SearchDictActivity.class);
+                startActivity(i1);
+                break;
+            case R.id.btn_idiom:
+                Intent i2=new Intent(getContext(), SearchIdiomActivity.class);
+                startActivity(i2);
+                break;
+        }
 
     }
 }

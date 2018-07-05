@@ -1,7 +1,5 @@
 package com.yiyi.translater.activity;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,18 +23,22 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SearchDictActivity extends AppCompatActivity
         implements View.OnClickListener {
 
-    private TextView tvZd,tvDic;
+    private TextView tvZi, tvBihua,tvPy,tvBushou,tvJijie;
+    private RelativeLayout rlRes;
     private EditText etZdSea;
     private ImageView ivZdSea;
     private JSONObject js;
     private String result = "";
 
-    private String url = "http://v.juhe.cn/xhzd/query";//请求的网址
-    private String key = "0494fbef4fba4f8fda8907ccd7c4e53a";//请求的key
-    private String word = "";//需要查询的字
+    private String url = "http://api.avatardata.cn/XinHuaZiDian/LookUp";//请求的网址
+    private String key = "2876cc5b612a46efac770967ae85f4cf";//请求的key
+    private String content  = "";//需要查询的字
 
     private Handler handler = new Handler() {
         @Override
@@ -43,25 +46,45 @@ public class SearchDictActivity extends AppCompatActivity
             super.handleMessage(msg);
             if (msg.what == 1) {
                 String r = (String) msg.obj;
+                readJson(r);
                 System.out.println(r);
-                try {
-                    js = new JSONObject(r);
-                    JSONArray value = js.getJSONArray("result");
-                    JSONObject child = null;
-                    for (int i = 0; i < value.length(); i++) {
-                        child = value.getJSONObject(i);
-                        result = child.getString("jijie");
-                        tvDic.setText(result);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-                }
             }
+        }
     };
+    private String readJson(String jsonStr) {
+        try {
+            js = new JSONObject(jsonStr);
+            String regEx_html = "<[^>]+>"; // 定义HTML标签的正则表达式
+            Pattern p_html = Pattern.compile(regEx_html, Pattern.CASE_INSENSITIVE);
+            Matcher m_html = p_html.matcher(jsonStr);
+            jsonStr = m_html.replaceAll(""); // 过滤html标签
+            JSONArray value = js.getJSONArray("result");
+            JSONObject child = null;
+            for (int i = 0; i < value.length(); i++) {
+                child = value.getJSONObject(i);
+                String a=jsonStr.trim().replaceAll(" ", "");
+                js = new JSONObject(a);
+                JSONArray v = js.getJSONArray("result");
+                JSONObject c = null;
+                c=v.getJSONObject(i);
+                String zi = c.getString("hanzi");
+                String py = c.getString("duyin");
+                String bihua = c.getString("bihua");
+                String bushou = c.getString("bushou");
+                String jianjie = c.getString("jianjie");
+                tvZi.setText(zi);
+                tvPy.setText(py);
+                tvBihua.setText(bihua);
+                tvBushou.setText(bushou);
+                tvJijie.setText(jianjie);
+                rlRes.setVisibility(View.VISIBLE);
+            }
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonStr.trim().replaceAll(" ", ""); // 返回文本字符串
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,39 +99,44 @@ public class SearchDictActivity extends AppCompatActivity
     }
 
     private void initViews() {
-        tvDic=findViewById(R.id.tv_dic);
-        tvZd=findViewById(R.id.tv_zd);
-        etZdSea=findViewById(R.id.et_zd_search);
-        ivZdSea=findViewById(R.id.iv_zd_search);
+        tvJijie=findViewById(R.id.tv_jijie);
+        tvBushou=findViewById(R.id.tv_bushou);
+        tvPy= findViewById(R.id.tv_py);
+        tvBihua = findViewById(R.id.tv_bihua);
+        tvZi = findViewById(R.id.tv_zi);
+        etZdSea = findViewById(R.id.et_zd_search);
+        ivZdSea = findViewById(R.id.iv_zd_search);
+        rlRes = findViewById(R.id.rl_res);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_zd_search:
-                    dict();
-                    etZdSea.setText("");
+                dict();
                 break;
         }
     }
-        private void dict() {
-            RequestParams params = new RequestParams();
-            params.addQueryStringParameter("key", key);//需要翻译的文字
-            params.addQueryStringParameter("word", word);//翻译源语言
-            HttpUtils http = new HttpUtils();
-            http.send(HttpRequest.HttpMethod.POST, url, params, new RequestCallBack<Object>() {
-                @Override
-                public void onSuccess(ResponseInfo<Object> responseInfo) {
-                    Message msg = new Message();
-                    msg.what = 1;
-                    msg.obj = responseInfo.result;
-                    handler.sendMessage(msg);
-                }
 
-                @Override
-                public void onFailure(HttpException e, String s) {
-                    Toast.makeText(SearchDictActivity.this, "错误！", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+    private void dict() {
+        content = etZdSea.getText().toString();
+        RequestParams params = new RequestParams();
+        params.addQueryStringParameter("key", key);
+        params.addQueryStringParameter("content", content);
+        HttpUtils http = new HttpUtils();
+        http.send(HttpRequest.HttpMethod.POST, url, params, new RequestCallBack<Object>() {
+            @Override
+            public void onSuccess(ResponseInfo<Object> responseInfo) {
+                Message msg = new Message();
+                msg.what = 1;
+                msg.obj = responseInfo.result;
+                handler.sendMessage(msg);
+            }
+
+            @Override
+            public void onFailure(HttpException e, String s) {
+                Toast.makeText(SearchDictActivity.this, "错误！", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

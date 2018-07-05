@@ -32,6 +32,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="55dp"
+            android:hint="请输入汉字"
             android:background="@drawable/rounded_edittext" />
 
         <ImageView
@@ -45,29 +46,95 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_res"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/re_zidian_search"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
 
         <TextView
-            android:layout_width="3dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="15dp"
-            android:background="@color/dictionary" />
+            android:id="@+id/tv_zi"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="zi"
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tv_py"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="咬文嚼字"
-            android:textSize="16sp"
-            android:layout_marginLeft="25dp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:text="py"
+            android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_dic"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="106dp"
+            android:text="笔画："
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_bihua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv1"
+            android:layout_toEndOf="@+id/tv1"
+            android:text="bihua" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv1"
+            android:layout_marginLeft="240dp"
+            android:text="部首："
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_bushou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv1"
+            android:layout_marginRight="30dp"
+            android:layout_toEndOf="@+id/tv2"
+            android:text="bushou" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="133dp"
+            android:background="@color/main_view" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="140dp"
+            android:text="释义："
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_jijie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="88dp"
+            android:text="result" />
     </RelativeLayout>
 </LinearLayout>

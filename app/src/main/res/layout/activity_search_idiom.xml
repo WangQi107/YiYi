@@ -29,6 +29,7 @@
             android:id="@+id/et_idiom_search"
             android:layout_width="300dp"
             android:layout_height="40dp"
+            android:hint="请输入汉字"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="55dp"
@@ -46,14 +47,108 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_idiomres"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/re_idiom_search"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
 
-        <ListView
-            android:id="@+id/lv_idiom"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
+        <TextView
+            android:id="@+id/tv_ci"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="ci"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_ipy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:text="py"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_ipy"
+            android:text="释义："
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_sy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv4"
+            android:layout_centerHorizontal="true"
+            android:text="shiyi" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="119dp"
+            android:text="出处："
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-119dp"
+            android:text="from" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="49dp"
+            android:text="近义："
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_jinyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv6"
+            android:layout_toEndOf="@+id/tv4"
+            android:text="jinyi" />
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="12dp"
+            android:text="反义："
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_fanyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv7"
+            android:layout_toEndOf="@+id/tv4"
+            android:text="fanyi" />
+
     </RelativeLayout>
 </LinearLayout>

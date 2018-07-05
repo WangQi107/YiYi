@@ -35,8 +35,8 @@ public class SearchIdiomActivity extends AppCompatActivity implements View.OnCli
     private JSONObject js;
     private String result = "";
 
-    private String url = "http://api.jisuapi.com/cidian/word";//请求的网址
-    private String key = "3c0a36ebd75e3739";//请求的key
+    private String url = "http://v.juhe.cn/chengyu/query";//请求的网址
+    private String key = "27e386edf3f21c5f4fd052e23b8a0b36";//请求的key
     private String word = "";//需要查询的字
 
     private Handler handler = new Handler() {
@@ -54,17 +54,13 @@ public class SearchIdiomActivity extends AppCompatActivity implements View.OnCli
     private String readIdiomJson(String jsonStr) {
         try {
             js = new JSONObject(jsonStr);
-            JSONArray value = js.getJSONArray("result");
-            JSONObject child = null;
+            JSONObject value = js.getJSONObject("result");
             for (int i = 0; i < value.length(); i++) {
-                child = value.getJSONObject(i);
-                String ci = child.getString("name");
-                String ipy = child.getString("pinyin");
-                String shiyi = child.getString("chengyujs");
-                String from = child.getString("from_");
-                String jin = child.getString("tongyi");
-                String fan = child.getString("fanyi");
-                tvCi.setText(ci);
+                String ipy = value.getString("pinyin");
+                String shiyi = value.getString("chengyujs");
+                String from = value.getString("from_");
+                String jin = value.getString("tongyi");
+                String fan = value.getString("fanyi");
                 tvIpy.setText(ipy);
                 tvSy.setText(shiyi);
                 tvFrom.setText(from);
@@ -109,6 +105,7 @@ public class SearchIdiomActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()) {
             case R.id.iv_idiom_search:
                 idiom();
+                tvCi.setText(word);
                 break;
         }
     }

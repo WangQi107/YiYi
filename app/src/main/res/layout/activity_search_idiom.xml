@@ -56,8 +56,8 @@
 
         <TextView
             android:id="@+id/tv_ci"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center"
@@ -96,9 +96,8 @@
             android:id="@+id/tv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="119dp"
+            android:layout_centerVertical="true"
             android:text="出处："
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -109,7 +108,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv5"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="-119dp"
             android:text="from" />
 
         <TextView
@@ -118,10 +116,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="49dp"
+            android:layout_marginBottom="70dp"
             android:text="近义："
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_jinyi"
@@ -137,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="30dp"
             android:text="反义："
             android:textSize="16sp"
             android:textStyle="bold" />

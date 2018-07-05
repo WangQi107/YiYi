@@ -2,9 +2,13 @@ package com.yiyi.translater.fragment;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +18,10 @@ import com.yiyi.translater.R;
 import com.yiyi.translater.activity.AboutActivity;
 import com.yiyi.translater.activity.CollectActivity;
 import com.yiyi.translater.activity.MyinfoActivity;
+import com.yiyi.translater.dao.Info_Dao;
 import com.yiyi.translater.dao.SQLiteHelper;
 import com.yiyi.translater.model.Collect;
+import com.yiyi.translater.model.Info;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,7 +57,19 @@ public class Fragment_My extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent ii=new Intent(getActivity(), MyinfoActivity.class);
-                startActivity(ii);
+                SharedPreferences aa = getContext().getSharedPreferences("INFO", getContext().MODE_PRIVATE);
+                Boolean b=aa.getBoolean("First",true);
+                if (b==true){
+                    SharedPreferences a = getContext().getSharedPreferences("ID", getContext().MODE_PRIVATE);
+                    String n = a.getString("id", "");
+                    Info info=new Info(n);
+                    Info_Dao dao=new Info_Dao(getContext());
+                    long m=dao.insertInfo(info);
+                    startActivity(ii);
+                    aa.edit().putBoolean("First",false).commit();
+                }else{
+                    startActivity(ii);
+                }
             }
         });
         reabout.setOnClickListener(new View.OnClickListener() {

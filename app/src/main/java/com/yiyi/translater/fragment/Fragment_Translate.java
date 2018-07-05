@@ -261,7 +261,10 @@ public class Fragment_Translate extends Fragment implements View.OnClickListener
 
     private void InsertCollect() {
         String res=tvres.getText().toString();
-        Collect co=new Collect(123,date,res,q);
+        String yuan=ett.getText().toString();
+        SharedPreferences sp=getContext().getSharedPreferences("ID",MODE_PRIVATE);
+        String i=sp.getString("id","");
+        Collect co=new Collect(i,date,res,yuan);
         Collect_Dao dao=new Collect_Dao(getContext());
         long m=dao.insertCollect(co);
         if (m>0) {

@@ -2,7 +2,7 @@ package com.yiyi.translater.model;
 
 public class Collect {
     private int id;
-    private int userid;
+    private String userid;
     private String time;
     private String cotent;
     private String yuan;
@@ -10,14 +10,14 @@ public class Collect {
     public Collect() {
     }
 
-    public Collect(int userid, String time, String cotent, String yuan) {
+    public Collect(String userid, String time, String cotent, String yuan) {
         this.userid = userid;
         this.time = time;
         this.cotent = cotent;
         this.yuan = yuan;
     }
 
-    public Collect(int id, int userid, String time, String cotent, String yuan) {
+    public Collect(int id, String userid, String time, String cotent, String yuan) {
         this.id = id;
         this.userid = userid;
         this.time = time;
@@ -33,11 +33,11 @@ public class Collect {
         this.id = id;
     }
 
-    public int getUserid() {
+    public String getUserid() {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(String userid) {
         this.userid = userid;
     }
 

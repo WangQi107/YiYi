@@ -1,5 +1,8 @@
 package com.yiyi.translater.activity;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -7,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private long exitTime = 0;
     private SQLiteHelper helper;
     private static SQLiteDatabase db;
+    int numcode;
+    private static final String TAG = "Log";
 
 
     @Override
@@ -38,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setViews();
         setListeners();
         setDataBase();
+        setid();
     }
 
     private void initViews() {
@@ -92,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void setDataBase() {
@@ -112,5 +118,21 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    public void setid() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SharedPreferences a = getSharedPreferences("Start", MODE_PRIVATE);
+                Boolean isFirst=a.getBoolean("isFirst",true);
+                if (isFirst==true){
+                    numcode = (int) ((Math.random() * 9 + 1) * 100000);
+                    SharedPreferences aa = getSharedPreferences("ID", Context.MODE_PRIVATE);
+                    aa.edit().putString("id",String.valueOf(numcode).toString()).commit();
+                    a.edit().putBoolean("isFirst",false).commit();
+                }
+            }
+        }).start();
     }
 }

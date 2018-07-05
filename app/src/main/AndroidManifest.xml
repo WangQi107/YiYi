@@ -26,5 +26,9 @@
         <activity android:name=".activity.SearchIdiomActivity"></activity>
         <activity android:name=".activity.AboutActivity"
             android:theme="@style/AppTheme_one"></activity>
+        <activity android:name=".activity.CollectActivity"
+            android:theme="@style/AppTheme_one"></activity>
+        <activity android:name=".activity.MyinfoActivity"
+            android:theme="@style/AppTheme_one"></activity>
     </application>
 </manifest>

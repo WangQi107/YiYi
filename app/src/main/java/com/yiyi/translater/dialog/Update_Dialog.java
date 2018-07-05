@@ -60,8 +60,11 @@ public class Update_Dialog extends Dialog {
             resetinfocontent.setInputType(InputType.TYPE_CLASS_PHONE);
             resetinfocontent.setFilters(new InputFilter[]{new InputFilter.LengthFilter(11)});
         }
-        if (lengthStr.equals("pass")) {
-            resetinfocontent.setFilters(new InputFilter[]{new InputFilter.LengthFilter(8)});
+        if (lengthStr.equals("sex")) {
+            resetinfocontent.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+        }
+        if (lengthStr.equals("age")) {
+            resetinfocontent.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
         }
     }
 

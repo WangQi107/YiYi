@@ -17,8 +17,10 @@ public class Collect_Dao {
 
     public long insertCollect(Collect collect) {
         ContentValues cv = new ContentValues();
+        cv.put("userid",collect.getUserid());
         cv.put("collecttime",collect.getTime());
         cv.put("collectcontent", collect.getCotent());
+        cv.put("collectyuan",collect.getYuan());
         return db.insert("tb_collect", null, cv);
     }
 }

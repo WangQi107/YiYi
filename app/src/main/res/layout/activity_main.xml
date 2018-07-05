@@ -11,7 +11,7 @@
         style="@style/NoSpaceActionBarTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/chenjin"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <TextView

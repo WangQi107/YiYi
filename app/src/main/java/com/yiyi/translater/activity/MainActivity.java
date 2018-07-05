@@ -1,5 +1,6 @@
 package com.yiyi.translater.activity;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yiyi.translater.R;
+import com.yiyi.translater.dao.SQLiteHelper;
 import com.yiyi.translater.fragment.Fragment_Dict;
 import com.yiyi.translater.fragment.Fragment_My;
 import com.yiyi.translater.fragment.Fragment_Translate;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton rbmy;
     private TextView maintitle;
     private long exitTime = 0;
+    private SQLiteHelper helper;
+    private static SQLiteDatabase db;
 
 
     @Override
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         setViews();
         setListeners();
+        setDataBase();
     }
 
     private void initViews() {
@@ -67,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         fs.commit();
                         break;
                     case R.id.rb_dict:
-                        maintitle.setText("Dict");
+                        maintitle.setText("Dictionary");
                         FragmentManager ffm = getSupportFragmentManager();
                         FragmentTransaction ffs = ffm.beginTransaction();
                         Fragment_Dict df02 = new Fragment_Dict();
@@ -88,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setDataBase() {
+        helper = new SQLiteHelper(this);
+        db = helper.getReadableDatabase();
     }
 
     @Override

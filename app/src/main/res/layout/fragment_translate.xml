@@ -20,7 +20,7 @@
 
             <Button
                 android:id="@+id/languagefrom"
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
@@ -53,12 +53,12 @@
 
             <Button
                 android:id="@+id/languageto"
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="#00000000"
-                android:text="英文"
+                android:text="英语"
                 android:textColor="@color/chenjin"
                 android:textSize="20sp" />
 
@@ -122,23 +122,7 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/tv_clean"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="10dp"
-            android:text="清空历史记录" />
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/tv_clean"
-            android:visibility="gone">
-
-        </ListView>
-
-        <TextView
+            android:id="@+id/tv_yi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -148,13 +132,36 @@
             android:text="译文："
             android:textSize="18sp" />
 
+        <ImageView
+            android:id="@+id/im_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginEnd="55dp"
+            android:src="@mipmap/favorite"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/im_copy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/im_star"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="19dp"
+            android:src="@mipmap/ic_content"
+            android:tint="@color/black"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
+
         <TextView
             android:id="@+id/tv_res"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="result"
-            android:visibility="gone"
-            android:textSize="18sp" />
+            android:text=""
+            android:textSize="18sp"
+            android:visibility="gone" />
     </RelativeLayout>
 </RelativeLayout>

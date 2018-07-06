@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -34,6 +35,7 @@ public class SearchIdiomActivity extends AppCompatActivity implements View.OnCli
     private RelativeLayout rlIdiomres;
     private JSONObject js;
     private String result = "";
+    private Toolbar toolbar;
 
     private String url = "http://v.juhe.cn/chengyu/query";//请求的网址
     private String key = "27e386edf3f21c5f4fd052e23b8a0b36";//请求的key
@@ -81,6 +83,14 @@ public class SearchIdiomActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_search_idiom);
         initViews();
         setListeners();
+        toolbar.setNavigationIcon(R.mipmap.icon_back);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void setListeners() {
@@ -98,6 +108,7 @@ public class SearchIdiomActivity extends AppCompatActivity implements View.OnCli
         tvFrom=findViewById(R.id.tv_from);
         tvJinyi=findViewById(R.id.tv_jinyi);
         tvFanyi=findViewById(R.id.tv_fanyi);
+        toolbar=findViewById(R.id.chenyu_toolbar);
     }
 
     @Override

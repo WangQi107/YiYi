@@ -7,11 +7,28 @@
     android:orientation="vertical"
     tools:context=".activity.SearchIdiomActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/chenyu_toolbar"
+        style="@style/NoSpaceActionBarTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/chenjin"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/chenyu_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="成语词典"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+    </android.support.v7.widget.Toolbar>
+
     <RelativeLayout
+        android:id="@+id/re_idiom_search"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/dictionary"
-        android:id="@+id/re_idiom_search">
+        android:background="@color/dictionary">
 
         <TextView
             android:id="@+id/tv_idiom"
@@ -29,21 +46,21 @@
             android:id="@+id/et_idiom_search"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:hint="请输入汉字"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="55dp"
-            android:background="@drawable/rounded_edittext" />
+            android:background="@drawable/rounded_edittext"
+            android:hint="请输入词语" />
+
         <ImageView
+            android:id="@+id/iv_idiom_search"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:src="@mipmap/search"
             android:layout_alignTop="@id/et_idiom_search"
             android:layout_marginEnd="40dp"
-            android:id="@+id/iv_idiom_search" />
+            android:src="@mipmap/search" />
     </RelativeLayout>
-
 
 
     <RelativeLayout
@@ -82,7 +99,7 @@
             android:layout_below="@+id/tv_ipy"
             android:text="释义："
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_sy"

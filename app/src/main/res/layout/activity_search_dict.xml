@@ -4,8 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SearchDictActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activity.SearchDictActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/dict_toolbar"
+        style="@style/NoSpaceActionBarTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/chenjin"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/dict_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="新华字典"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+    </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
         android:id="@+id/re_zidian_search"
@@ -32,8 +49,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="55dp"
-            android:hint="请输入汉字"
-            android:background="@drawable/rounded_edittext" />
+            android:background="@drawable/rounded_edittext"
+            android:hint="请输入文字" />
 
         <ImageView
             android:id="@+id/iv_zd_search"

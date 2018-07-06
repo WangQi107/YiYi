@@ -11,8 +11,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             +"_id integer primary key autoincrement,"
             +"userid varchar(0),"
             +"collecttime vachar(0),"
-            +"collectyuan varchar(0),"
-            +"collectcontent vachar(0))";
+            +"collectcontent vachar(0),"
+            +"collectyuan varchar(0))";
     private static final String TB_INFO="create table tb_info("
             +"_id integer primary key autoincrement,"
             +"userid varchar(0),"

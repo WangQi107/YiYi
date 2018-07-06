@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -35,6 +36,7 @@ public class SearchDictActivity extends AppCompatActivity
     private ImageView ivZdSea;
     private JSONObject js;
     private String result = "";
+    private Toolbar toolbar;
 
     private String url = "http://api.avatardata.cn/XinHuaZiDian/LookUp";//请求的网址
     private String key = "2876cc5b612a46efac770967ae85f4cf";//请求的key
@@ -90,6 +92,14 @@ public class SearchDictActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_dict);
         initViews();
+        toolbar.setNavigationIcon(R.mipmap.icon_back);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         setListeners();
     }
 
@@ -107,6 +117,7 @@ public class SearchDictActivity extends AppCompatActivity
         etZdSea = findViewById(R.id.et_zd_search);
         ivZdSea = findViewById(R.id.iv_zd_search);
         rlRes = findViewById(R.id.rl_res);
+        toolbar=findViewById(R.id.dict_toolbar);
     }
 
     @Override
